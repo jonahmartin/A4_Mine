@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +29,7 @@ namespace Lab5
             grpStats.Hide();
             grpText.Hide();
             txtCode.Focus();
-            lblCode.Text=Convert.ToString(GetRandom(1000000,2000000));
+            lblCode.Text=Convert.ToString(GetRandom(100000,200000));
         }
 
         //creates constant for my name to be used where needed
@@ -150,7 +150,7 @@ namespace Lab5
         private bool CheckInput()
         {
             bool isValid;
-            if(txtString.Text == "" || txtString2.Text == "")
+            if(txtString1.Text == "" || txtString2.Text == "")
             {
                 isValid = false;
             }
@@ -206,8 +206,8 @@ namespace Lab5
             int Sum = 0;
 
             while (lstNumbers.Items.Count>count)
-            {
-                Sum += (lstNumbers.Items[count++]);
+            { 
+                Sum += Convert.ToInt32(lstNumbers.Items[count++]);
             }
 
             return Sum;
@@ -237,7 +237,7 @@ namespace Lab5
 
             Random rand = new Random(733); //seed value 733
 
-            for(count<value; count ++)
+            for(int count = 0;  count<value; count ++)
             {
                 lstNumbers.Items.Add(rand.Next(1000,5001));
             }
